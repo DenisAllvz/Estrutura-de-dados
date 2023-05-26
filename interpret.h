@@ -3,8 +3,7 @@
 
 void interpret (const char *source) ;
 void interpreter_init();
-/*static void interpreta();*/
-
+void list_init();
 void stack_init () ;
 
 #endif
