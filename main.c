@@ -3,44 +3,20 @@
 #include "interpret.h"
 #include "stack.h"
 
-
-static void repl()
-{
-  //stack_init();
+static void repl(){
   char line[1024];
-  for (;;)
-  {
+  for (;;){
     printf("> ");
-
-    if (!fgets(line, sizeof(line), stdin))
-    {
+    if (!fgets(line, sizeof(line), stdin)){
       printf("\n");
       break;
     }
-
     interpret(line);
   }
 }
-
-
-
-
-int main () {
+int main (){
   interpreter_init();
-
-  /*
-    Stack* s = new_stack(100);
-    stack_push(s,15);
-    stack_push(s,25);
-    stack_print(s);
-    int x = stack_pop(s);
-     stack_print(s);
-    //printf ("%d\n",x);
-    //x = stack_pop(s);
-    //printf ("%d\n",x);
-  
- */
-    repl();
-    /*interpreta();*/
-    return 0;
+  list_init();
+  repl();
+  return 0;
 }
