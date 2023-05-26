@@ -11,6 +11,7 @@ Stack* new_stack(int size){
   Stack* s = calloc(1,sizeof(Stack));
   s->values = calloc(size, sizeof(int));
   s->top=0;
+  
   return s;
 }
 
@@ -19,6 +20,10 @@ void stack_push(Stack* s, int value){
   
 }
 int stack_pop (Stack* s){
+  if(s->top==0){
+    printf("stack empty\n");
+    exit(1);
+  }
   return s->values[--s->top];
 }
 
